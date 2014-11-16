@@ -6,9 +6,6 @@
 
 import json
 
-# import nltk, re, pprint
-# import sys
-
 ADJECTIVE_TYPES = ["JJ", "JJR", "JJS"]
 NOUN_TYPES = ["NN", "NNP", "NNPS", "NNS"]
 VERB_TYPES = ["VB", "VBD", "VBG", "VBN", "VBP", "VBZ"]
@@ -87,6 +84,8 @@ def extract_predicate(vp):
 
 	# verb = the deepest verb in VP_subtree
 	verb = findDeepestType(VERB_TYPES, vp)
+
+	#extract attributes next..
 	return verb
 
 
@@ -108,6 +107,7 @@ def extract_object(vp):
 			else:
 				print("key isn't in [NP, PP, ADJP], wtfman")
 
+	#extract attributes somewhere in here..
 	return None
 
 def extract_triplet(sent):
